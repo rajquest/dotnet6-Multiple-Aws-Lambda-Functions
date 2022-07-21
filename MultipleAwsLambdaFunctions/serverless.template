@@ -1,0 +1,33 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Transform": "AWS::Serverless-2016-10-31",
+  "Description": "An AWS Serverless Application.",
+  "Resources": {
+   "ToUpperFunction" : {
+      "Type" : "AWS::Serverless::Function",
+      "Properties": {
+        "Handler": "MultipleAwsLambdaFunctions::MultipleAwsLambdaFunctions.Function::ToUpper",
+        "Runtime": "dotnet6",
+        "CodeUri": "",
+        "Description": "Default function",
+        "MemorySize": 256,
+        "Timeout": 30,
+        "Role": null,
+        "Policies": [ "AWSLambdaFullAccess" ]
+      }
+    },
+    "ToLowerFunction" : {
+      "Type" : "AWS::Serverless::Function",
+      "Properties": {
+        "Handler": "MultipleAwsLambdaFunctions::MultipleAwsLambdaFunctions.Function::ToLower",
+        "Runtime": "dotnet6",
+        "CodeUri": "",
+        "Description": "Lowercase function",
+        "MemorySize": 256,
+        "Timeout": 30,
+        "Role": null,
+        "Policies": [ "AWSLambdaFullAccess" ]
+                    }
+        }
+    }  
+}
